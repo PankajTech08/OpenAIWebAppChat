@@ -1,0 +1,46 @@
+<div class="chat-history-container">
+  <div class="history-header">
+    <h3>Conversation History ({{ messages.length }})</h3>
+    <button 
+      *ngIf="messages.length > 0"
+      (click)="clearHistory()"
+      class="clear-button">
+      Clear History
+    </button>
+  </div>
+
+  <div *ngIf="messages.length === 0" class="empty-history">
+    <p>No conversation history yet. Start by asking a question!</p>
+  </div>
+
+  <div *ngIf="messages.length > 0" class="history-list">
+    <div *ngFor="let message of messages; let i = index" class="history-item" [ngClass]="'status-' + message.status">
+      <div class="item-header">
+        <span class="item-number">{{ i + 1 }}.</span>
+        <span class="item-status" [ngClass]="'status-' + message.status">
+          {{ message.status }}
+        </span>
+      </div>
+      
+      <div class="question-section">
+        <strong>Q:</strong>
+        <p class="question-text">{{ message.question }}</p>
+      </div>
+      
+      <div class="response-section">
+        <strong>A:</strong>
+        <p class="response-text">{{ message.response | slice:0:200 }}{{ message.response.length > 200 ? '...' : '' }}</p>
+      </div>
+      
+      <div class="item-footer">
+        <small class="timestamp">{{ message.timestamp | date:'short' }}</small>
+        <button 
+          (click)="copyMessage(message)"
+          class="copy-item-button"
+          title="Copy this message">
+          Copy
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

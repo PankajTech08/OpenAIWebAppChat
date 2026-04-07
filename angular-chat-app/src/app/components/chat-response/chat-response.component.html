@@ -1,0 +1,29 @@
+<div class="chat-response-container">
+  <div *ngIf="isLoading" class="loading-indicator">
+    <div class="spinner"></div>
+    <p>Getting AI response...</p>
+  </div>
+
+  <div *ngIf="error && !isLoading" class="error-message">
+    <p><strong>Error:</strong> {{ error }}</p>
+  </div>
+
+  <div *ngIf="response && !isLoading && !error" class="response-box">
+    <div class="response-header">
+      <h3>AI Response</h3>
+      <button class="copy-button" (click)="copyToClipboard()" title="Copy to clipboard">
+        Copy
+      </button>
+    </div>
+    <div class="response-content">
+      <p>{{ response.message }}</p>
+    </div>
+    <div *ngIf="timestamp" class="response-timestamp">
+      <small>Received: {{ timestamp | date:'short' }}</small>
+    </div>
+  </div>
+
+  <div *ngIf="!response && !isLoading && !error" class="empty-state">
+    <p>Ask a question to get started...</p>
+  </div>
+</div>

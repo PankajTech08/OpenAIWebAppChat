@@ -1,0 +1,17 @@
+<div class="chat-input-container">
+  <div class="input-wrapper">
+    <textarea 
+      [(ngModel)]="questionText"
+      (keydown)="onKeyDown($event)"
+      [disabled]="isLoading"
+      placeholder="Ask a question..."
+      class="input-field">
+    </textarea>
+    <button 
+      (click)="sendMessage()"
+      [disabled]="!questionText.trim() || isLoading"
+      class="send-button">
+      {{ isLoading ? 'Sending...' : 'Send' }}
+    </button>
+  </div>
+</div>

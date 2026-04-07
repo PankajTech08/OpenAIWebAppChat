@@ -1,0 +1,160 @@
+.chat-history-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.history-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.clear-button {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: #c82333;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 30px 20px;
+  color: #999;
+  font-style: italic;
+}
+
+.history-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.history-item {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.history-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-item.status-pending {
+  border-left-color: #ffc107;
+}
+
+.history-item.status-error {
+  border-left-color: #dc3545;
+}
+
+.history-item.status-success {
+  border-left-color: #28a745;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.item-number {
+  font-weight: bold;
+  color: #666;
+  font-size: 12px;
+}
+
+.item-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.item-status.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.item-status.status-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.item-status.status-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.question-section,
+.response-section {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.question-section strong,
+.response-section strong {
+  color: #333;
+  font-size: 12px;
+}
+
+.question-text,
+.response-text {
+  margin: 4px 0 0 20px;
+  color: #555;
+  font-size: 13px;
+}
+
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+
+.timestamp {
+  color: #999;
+}
+
+.copy-item-button {
+  padding: 4px 8px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: background-color 0.3s ease;
+}
+
+.copy-item-button:hover {
+  background-color: #5a6268;
+}

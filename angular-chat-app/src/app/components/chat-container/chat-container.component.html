@@ -1,0 +1,27 @@
+<div class="chat-container-wrapper">
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>AI Chat Assistant</h2>
+      <p>Powered by OpenAI</p>
+    </div>
+
+    <div class="chat-content">
+      <app-chat-response 
+        [response]="currentResponse"
+        [isLoading]="isLoading"
+        [error]="error"
+        [timestamp]="lastTimestamp">
+      </app-chat-response>
+
+      <app-chat-input 
+        [isLoading]="isLoading"
+        (onSendMessage)="onSendMessage($event)">
+      </app-chat-input>
+
+      <app-chat-history 
+        [messages]="messages"
+        (onClearHistory)="onClearHistory()">
+      </app-chat-history>
+    </div>
+  </div>
+</div>
